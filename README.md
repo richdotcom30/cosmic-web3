@@ -2,7 +2,7 @@
 
 A high-end, immersive 3D landing page for a Web3 meme coin project featuring cosmic/space theme animations.
 
-![Cosmic Landing Page](https://via.placeholder.com/1200x630/0a0a0f/7b2cbf?text=COSMIC+Landing)
+
 
 ## 🌟 Features
 
