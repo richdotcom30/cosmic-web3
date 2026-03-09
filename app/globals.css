@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --deep-space: #0a0a0f;
+  --cosmic-purple: #1a0a2e;
+  --nebula-pink: #ff2d75;
+  --electric-cyan: #00f5ff;
+  --cosmic-gold: #ffd700;
+  --starlight-gray: #a0a0b0;
+  --violet-glow: #7b2cbf;
+  --cyan-glow: #00b4d8;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+  background-color: var(--deep-space);
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cosmic-purple);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nebula-pink);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--electric-cyan);
+}
+
+/* Glassmorphism */
+.glass-card {
+  background: rgba(26, 10, 46, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+}
+
+.glass-card:hover {
+  border-color: rgba(255, 45, 117, 0.5);
+  box-shadow: 0 0 30px rgba(255, 45, 117, 0.3);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--nebula-pink), var(--electric-cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, var(--cosmic-gold), var(--nebula-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Neon glow effects */
+.neon-pink {
+  box-shadow: 0 0 10px var(--nebula-pink), 0 0 20px var(--nebula-pink), 0 0 40px var(--nebula-pink);
+}
+
+.neon-cyan {
+  box-shadow: 0 0 10px var(--electric-cyan), 0 0 20px var(--electric-cyan), 0 0 40px var(--electric-cyan);
+}
+
+.neon-gold {
+  box-shadow: 0 0 10px var(--cosmic-gold), 0 0 20px var(--cosmic-gold), 0 0 40px var(--cosmic-gold);
+}
+
+/* Button styles */
+.cosmic-btn {
+  background: linear-gradient(135deg, var(--nebula-pink), var(--violet-glow));
+  border: none;
+  padding: 16px 32px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cosmic-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px var(--nebula-pink), 0 0 60px var(--nebula-pink);
+}
+
+.cosmic-btn-secondary {
+  background: transparent;
+  border: 2px solid var(--electric-cyan);
+  padding: 14px 30px;
+  font-family: 'Space Mono', monospace;
+  font-weight: 700;
+  color: var(--electric-cyan);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.cosmic-btn-secondary:hover {
+  background: var(--electric-cyan);
+  color: var(--deep-space);
+  box-shadow: 0 0 30px var(--electric-cyan);
+}
+
+/* Section styles */
+.section-padding {
+  padding: 120px 20px;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 80px 16px;
+  }
+}
+
+/* Animation delays for staggered effects */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+.delay-600 { animation-delay: 600ms; }
+.delay-700 { animation-delay: 700ms; }
+.delay-800 { animation-delay: 800ms; }
+
+/* Star twinkle animation */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(0.8); }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-20px) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-2deg); }
+}
+
+/* Pulse ring */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+/* Cosmic background */
+.cosmic-bg {
+  background: radial-gradient(ellipse at bottom, #1a0a2e 0%, #0a0a0f 70%);
+}
+
+/* Glow border */
+.glow-border {
+  position: relative;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(45deg, var(--nebula-pink), var(--electric-cyan), var(--cosmic-gold));
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+}
