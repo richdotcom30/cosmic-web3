@@ -58,7 +58,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="py-8 text-center text-starlight-gray">
           <p className="font-space-mono text-sm">
-            © 2024 COSMIC. All rights reserved. To the moon! 🚀
+            © 2026 COSMIC. All rights reserved. To the moon! 🚀
           </p>
         </footer>
       </div>
